@@ -157,21 +157,7 @@ namespace File_filter_system
             _currentUser = userLogin;
         }
 
-        private void editButton_Click(object sender, EventArgs e)
-        {
-            if (_currentUser == "admin")
-                MessageBox.Show("Главный администратор не может редактировать свои данные", "Ошибка редактирования", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-            string messageToLog = "AdminEditLogs";
-            new EditProfileForm(userLoginBox.Text, userPasswordBox.Text, userNameBox.Text, userSurnameBox.Text, true).ShowDialog();
-            profileEditCount.Text = (Int32.Parse(warningsCount.Text) + 1).ToString();
-            UpdateUserInfo(profileEditCount.Text, warningsCount.Text, _currentUser);
-            LoadUserAdminData(userLoginBox.Text);
-            UpdateLogInfo("Имя", userNameBox.Text, messageToLog);
-            UpdateLogInfo("Фамилия", userSurnameBox.Text, messageToLog);
-            UpdateLogInfo("Логин", userLoginBox.Text, messageToLog);
-            UpdateLogInfo("Пароль", userPasswordBox.Text, messageToLog);
-        }
 
         private void UpdateLogInfo(string messageToLog, string user)
         {
@@ -288,6 +274,22 @@ namespace File_filter_system
             {
                 _dataTable.DefaultView.RowFilter = string.Format("[{0}] = '{1}'", comboBox.SelectedItem, textBox7.Text);
             }
+        }
+
+        private void editButton_Click_1(object sender, EventArgs e)
+        {
+            if (_currentUser == "admin")
+                MessageBox.Show("Главный администратор не может редактировать свои данные", "Ошибка редактирования", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            string messageToLog = "AdminEditLogs";
+            new EditProfileForm(userLoginBox.Text, userPasswordBox.Text, userNameBox.Text, userSurnameBox.Text, true).ShowDialog();
+            profileEditCount.Text = (Int32.Parse(warningsCount.Text) + 1).ToString();
+            UpdateUserInfo(profileEditCount.Text, warningsCount.Text, _currentUser);
+            LoadUserAdminData(userLoginBox.Text);
+            UpdateLogInfo("Имя", userNameBox.Text, messageToLog);
+            UpdateLogInfo("Фамилия", userSurnameBox.Text, messageToLog);
+            UpdateLogInfo("Логин", userLoginBox.Text, messageToLog);
+            UpdateLogInfo("Пароль", userPasswordBox.Text, messageToLog);
         }
     }
 }

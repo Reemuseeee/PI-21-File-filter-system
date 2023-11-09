@@ -51,8 +51,8 @@ namespace File_filter_system
                 }
             }
 
-            UpdateUserData(editLoginBox.Text, userPasswordBox.Text, editNameBox.Text, editSurnameBox.Text);
-            UpdateLogInfo("Пользователь отредактировал своё имя на: " + editNameBox.Text + " ,пароль на: " + userPasswordBox.Text + " ,логин на: " + editLoginBox.Text + " ,фамилию на: " + editSurnameBox.Text, _currentUser);
+            UpdateUserData(editLoginBox.Text, userRPasswordBox.Text, editNameBox.Text, editSurnameBox.Text);
+            UpdateLogInfo("Пользователь отредактировал своё имя на: " + editNameBox.Text + " ,пароль на: " + userRPasswordBox.Text + " ,логин на: " + editLoginBox.Text + " ,фамилию на: " + editSurnameBox.Text, _currentUser);
             MessageBox.Show("Данные успешно изменены.", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }

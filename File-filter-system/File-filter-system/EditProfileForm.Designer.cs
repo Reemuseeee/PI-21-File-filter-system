@@ -38,8 +38,8 @@
             editNameBox = new TextBox();
             editSurnameBox = new TextBox();
             editLoginBox = new TextBox();
-            textBox4 = new TextBox();
             userPasswordBox = new TextBox();
+            userRPasswordBox = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -139,21 +139,21 @@
             editLoginBox.Size = new Size(177, 32);
             editLoginBox.TabIndex = 9;
             // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(307, 225);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(177, 32);
-            textBox4.TabIndex = 10;
-            // 
             // userPasswordBox
             // 
             userPasswordBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            userPasswordBox.Location = new Point(307, 271);
+            userPasswordBox.Location = new Point(307, 225);
             userPasswordBox.Name = "userPasswordBox";
             userPasswordBox.Size = new Size(177, 32);
-            userPasswordBox.TabIndex = 11;
+            userPasswordBox.TabIndex = 10;
+            // 
+            // userRPasswordBox
+            // 
+            userRPasswordBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userRPasswordBox.Location = new Point(307, 271);
+            userRPasswordBox.Name = "userRPasswordBox";
+            userRPasswordBox.Size = new Size(177, 32);
+            userRPasswordBox.TabIndex = 11;
             // 
             // EditProfileForm
             // 
@@ -161,8 +161,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkMagenta;
             ClientSize = new Size(756, 416);
+            Controls.Add(userRPasswordBox);
             Controls.Add(userPasswordBox);
-            Controls.Add(textBox4);
             Controls.Add(editLoginBox);
             Controls.Add(editSurnameBox);
             Controls.Add(editNameBox);
@@ -191,7 +191,7 @@
         private TextBox editNameBox;
         private TextBox editSurnameBox;
         private TextBox editLoginBox;
-        private TextBox textBox4;
         private TextBox userPasswordBox;
+        private TextBox userRPasswordBox;
     }
 }

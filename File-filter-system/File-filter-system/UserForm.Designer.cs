@@ -32,9 +32,9 @@
             tabPage1 = new TabPage();
             label2 = new Label();
             label32 = new Label();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            filterButton = new Button();
+            exampleButton = new Button();
+            showPathButton = new Button();
             numericUpDown1 = new NumericUpDown();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -50,7 +50,7 @@
             userLoginBox = new TextBox();
             userSurnameBox = new TextBox();
             userNameBox = new TextBox();
-            button4 = new Button();
+            editButton = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -77,9 +77,9 @@
             tabPage1.BackColor = Color.LightCoral;
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(label32);
-            tabPage1.Controls.Add(button3);
-            tabPage1.Controls.Add(button2);
-            tabPage1.Controls.Add(button1);
+            tabPage1.Controls.Add(filterButton);
+            tabPage1.Controls.Add(exampleButton);
+            tabPage1.Controls.Add(showPathButton);
             tabPage1.Controls.Add(numericUpDown1);
             tabPage1.Controls.Add(textBox2);
             tabPage1.Controls.Add(textBox1);
@@ -112,35 +112,35 @@
             label32.TabIndex = 9;
             label32.Text = "Добро пожаловать,";
             // 
-            // button3
+            // filterButton
             // 
-            button3.BackColor = Color.White;
-            button3.Location = new Point(386, 248);
-            button3.Name = "button3";
-            button3.Size = new Size(180, 32);
-            button3.TabIndex = 8;
-            button3.Text = "Отфильтровать";
-            button3.UseVisualStyleBackColor = false;
+            filterButton.BackColor = Color.White;
+            filterButton.Location = new Point(386, 248);
+            filterButton.Name = "filterButton";
+            filterButton.Size = new Size(180, 32);
+            filterButton.TabIndex = 8;
+            filterButton.Text = "Отфильтровать";
+            filterButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // exampleButton
             // 
-            button2.BackColor = Color.White;
-            button2.Location = new Point(12, 248);
-            button2.Name = "button2";
-            button2.Size = new Size(251, 32);
-            button2.TabIndex = 7;
-            button2.Text = "Сгенерировать пример";
-            button2.UseVisualStyleBackColor = false;
+            exampleButton.BackColor = Color.White;
+            exampleButton.Location = new Point(12, 248);
+            exampleButton.Name = "exampleButton";
+            exampleButton.Size = new Size(251, 32);
+            exampleButton.TabIndex = 7;
+            exampleButton.Text = "Сгенерировать пример";
+            exampleButton.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // showPathButton
             // 
-            button1.BackColor = Color.White;
-            button1.Location = new Point(386, 84);
-            button1.Name = "button1";
-            button1.Size = new Size(114, 32);
-            button1.TabIndex = 6;
-            button1.Text = "Обзор";
-            button1.UseVisualStyleBackColor = false;
+            showPathButton.BackColor = Color.White;
+            showPathButton.Location = new Point(386, 84);
+            showPathButton.Name = "showPathButton";
+            showPathButton.Size = new Size(114, 32);
+            showPathButton.TabIndex = 6;
+            showPathButton.Text = "Обзор";
+            showPathButton.UseVisualStyleBackColor = false;
             // 
             // numericUpDown1
             // 
@@ -201,7 +201,7 @@
             tabPage2.Controls.Add(userLoginBox);
             tabPage2.Controls.Add(userSurnameBox);
             tabPage2.Controls.Add(userNameBox);
-            tabPage2.Controls.Add(button4);
+            tabPage2.Controls.Add(editButton);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(label6);
@@ -279,15 +279,16 @@
             userNameBox.Size = new Size(168, 32);
             userNameBox.TabIndex = 6;
             // 
-            // button4
+            // editButton
             // 
-            button4.BackColor = Color.White;
-            button4.Location = new Point(12, 264);
-            button4.Name = "button4";
-            button4.Size = new Size(157, 36);
-            button4.TabIndex = 5;
-            button4.Text = "Редактировать";
-            button4.UseVisualStyleBackColor = false;
+            editButton.BackColor = Color.White;
+            editButton.Location = new Point(12, 264);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(157, 36);
+            editButton.TabIndex = 5;
+            editButton.Text = "Редактировать";
+            editButton.UseVisualStyleBackColor = false;
+            editButton.Click += editButton_Click;
             // 
             // label8
             // 
@@ -357,9 +358,9 @@
         private TabPage tabPage1;
         private Label label2;
         private Label label32;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button filterButton;
+        private Button exampleButton;
+        private Button showPathButton;
         private NumericUpDown numericUpDown1;
         private TextBox textBox2;
         private TextBox textBox1;
@@ -375,7 +376,7 @@
         private TextBox userLoginBox;
         private TextBox userSurnameBox;
         private TextBox userNameBox;
-        private Button button4;
+        private Button editButton;
         private Label label8;
         private Label label7;
         private Label label6;
