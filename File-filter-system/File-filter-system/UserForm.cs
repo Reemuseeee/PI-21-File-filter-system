@@ -82,5 +82,69 @@ namespace File_filter_system
                 sw.Write($"{messageToLog} ; {time.ToShortTimeString()}\n");
             }
         }
+
+        private void showPathButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                directoryBox.Text = fbd.SelectedPath;
+            }
+        }
+
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            // Получаем путь из текстового поля
+            string path = directoryBox.Text;
+
+            // Получаем слова для фильтрации
+            string[] filterWords = filterTextBox.Text.Split(' ');
+
+            // Получаем максимальный размер файла
+            int maxSize = (int)maxFileSizeNumeric.Value * 1024 * 1024;
+
+            // Ищем файлы по фильтру
+            List<string> filteredFiles = GetFilteredFiles(path, filterWords, maxSize);
+            string filesList = string.Join("\n", filteredFiles);
+
+            DialogResult result = MessageBox.Show(
+            $"Найдены следующие файлы:\n{filesList}\n\nУдалить их?",
+            "Подтверждение",
+            MessageBoxButtons.YesNo);
+            // Если пользователь подтвердил удаление - удаляем
+            if (result == DialogResult.Yes)
+            {
+                DeleteFiles(filteredFiles);
+                MessageBox.Show("Файлы успешно удалены");
+            }
+        }
+        // Метод для поиска файлов по фильтру
+        List<string> GetFilteredFiles(string path, string[] filterWords, int maxSize)
+        {
+            List<string> filteredFiles = new List<string>();
+
+            foreach (string filePath in Directory.GetFiles(path))
+            {
+                FileInfo fileInfo = new FileInfo(filePath);
+
+                if (fileInfo.Length <= maxSize &&
+                    filterWords.Any(w => fileInfo.Name.Contains(w)))
+                {
+                    filteredFiles.Add(filePath);
+                }
+            }
+
+            return filteredFiles;
+        }
+        // Метод для удаления файлов
+        void DeleteFiles(List<string> filesToDelete)
+        {
+            foreach (string file in filesToDelete)
+            {
+                File.Delete(file);
+            }
+        }
     }
+
+
 }

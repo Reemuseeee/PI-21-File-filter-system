@@ -35,9 +35,9 @@
             filterButton = new Button();
             exampleButton = new Button();
             showPathButton = new Button();
-            numericUpDown1 = new NumericUpDown();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            maxFileSizeNumeric = new NumericUpDown();
+            filterTextBox = new TextBox();
+            directoryBox = new TextBox();
             label3 = new Label();
             wordToFilter = new Label();
             label1 = new Label();
@@ -58,7 +58,7 @@
             label4 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)maxFileSizeNumeric).BeginInit();
             tabPage2.SuspendLayout();
             SuspendLayout();
             // 
@@ -80,9 +80,9 @@
             tabPage1.Controls.Add(filterButton);
             tabPage1.Controls.Add(exampleButton);
             tabPage1.Controls.Add(showPathButton);
-            tabPage1.Controls.Add(numericUpDown1);
-            tabPage1.Controls.Add(textBox2);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(maxFileSizeNumeric);
+            tabPage1.Controls.Add(filterTextBox);
+            tabPage1.Controls.Add(directoryBox);
             tabPage1.Controls.Add(label3);
             tabPage1.Controls.Add(wordToFilter);
             tabPage1.Controls.Add(label1);
@@ -121,6 +121,7 @@
             filterButton.TabIndex = 8;
             filterButton.Text = "Отфильтровать";
             filterButton.UseVisualStyleBackColor = false;
+            filterButton.Click += filterButton_Click;
             // 
             // exampleButton
             // 
@@ -141,27 +142,28 @@
             showPathButton.TabIndex = 6;
             showPathButton.Text = "Обзор";
             showPathButton.UseVisualStyleBackColor = false;
+            showPathButton.Click += showPathButton_Click;
             // 
-            // numericUpDown1
+            // maxFileSizeNumeric
             // 
-            numericUpDown1.Location = new Point(386, 192);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(180, 32);
-            numericUpDown1.TabIndex = 5;
+            maxFileSizeNumeric.Location = new Point(386, 192);
+            maxFileSizeNumeric.Name = "maxFileSizeNumeric";
+            maxFileSizeNumeric.Size = new Size(180, 32);
+            maxFileSizeNumeric.TabIndex = 5;
             // 
-            // textBox2
+            // filterTextBox
             // 
-            textBox2.Location = new Point(12, 191);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(323, 32);
-            textBox2.TabIndex = 4;
+            filterTextBox.Location = new Point(12, 191);
+            filterTextBox.Name = "filterTextBox";
+            filterTextBox.Size = new Size(323, 32);
+            filterTextBox.TabIndex = 4;
             // 
-            // textBox1
+            // directoryBox
             // 
-            textBox1.Location = new Point(12, 85);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(323, 32);
-            textBox1.TabIndex = 3;
+            directoryBox.Location = new Point(12, 85);
+            directoryBox.Name = "directoryBox";
+            directoryBox.Size = new Size(323, 32);
+            directoryBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -346,7 +348,7 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)maxFileSizeNumeric).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ResumeLayout(false);
@@ -361,9 +363,9 @@
         private Button filterButton;
         private Button exampleButton;
         private Button showPathButton;
-        private NumericUpDown numericUpDown1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private NumericUpDown maxFileSizeNumeric;
+        private TextBox filterTextBox;
+        private TextBox directoryBox;
         private Label label3;
         private Label wordToFilter;
         private Label label1;
