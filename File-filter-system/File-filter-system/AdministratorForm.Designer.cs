@@ -30,6 +30,8 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            label2 = new Label();
+            label32 = new Label();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -37,13 +39,17 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             label3 = new Label();
-            label2 = new Label();
+            wordToFilter = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
+            label12 = new Label();
+            label13 = new Label();
+            profileEditCount = new Label();
+            warningsCount = new Label();
+            userPasswordBox = new TextBox();
+            userLoginBox = new TextBox();
+            userSurnameBox = new TextBox();
+            userNameBox = new TextBox();
             button4 = new Button();
             label8 = new Label();
             label7 = new Label();
@@ -51,11 +57,11 @@
             label5 = new Label();
             label4 = new Label();
             tabPage3 = new TabPage();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            comboBox1 = new ComboBox();
-            textBox7 = new TextBox();
+            label17 = new Label();
+            label15 = new Label();
+            label26 = new Label();
+            deleteButton = new Button();
+            addNewAdmin = new Button();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -64,6 +70,11 @@
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
+            textBox7 = new TextBox();
+            comboBox = new ComboBox();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -80,12 +91,14 @@
             tabControl1.Location = new Point(-1, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(965, 450);
+            tabControl1.Size = new Size(980, 468);
             tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
             tabPage1.BackColor = Color.LightCoral;
+            tabPage1.Controls.Add(label2);
+            tabPage1.Controls.Add(label32);
             tabPage1.Controls.Add(button3);
             tabPage1.Controls.Add(button2);
             tabPage1.Controls.Add(button1);
@@ -93,15 +106,33 @@
             tabPage1.Controls.Add(textBox2);
             tabPage1.Controls.Add(textBox1);
             tabPage1.Controls.Add(label3);
-            tabPage1.Controls.Add(label2);
+            tabPage1.Controls.Add(wordToFilter);
             tabPage1.Controls.Add(label1);
             tabPage1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tabPage1.Location = new Point(4, 27);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(957, 419);
+            tabPage1.Size = new Size(972, 437);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Фильтр файлов";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(735, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(64, 24);
+            label2.TabIndex = 10;
+            label2.Text = "label2";
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Location = new Point(539, 19);
+            label32.Name = "label32";
+            label32.Size = new Size(190, 24);
+            label32.TabIndex = 9;
+            label32.Text = "Добро пожаловать,";
             // 
             // button3
             // 
@@ -163,14 +194,14 @@
             label3.TabIndex = 2;
             label3.Text = "Размер файла(Кб)";
             // 
-            // label2
+            // wordToFilter
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(15, 167);
-            label2.Name = "label2";
-            label2.Size = new Size(323, 24);
-            label2.TabIndex = 1;
-            label2.Text = "Слово или фраза для фильтрации";
+            wordToFilter.AutoSize = true;
+            wordToFilter.Location = new Point(15, 167);
+            wordToFilter.Name = "wordToFilter";
+            wordToFilter.Size = new Size(323, 24);
+            wordToFilter.TabIndex = 1;
+            wordToFilter.Text = "Слово или фраза для фильтрации";
             // 
             // label1
             // 
@@ -184,10 +215,14 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.LightCoral;
-            tabPage2.Controls.Add(textBox6);
-            tabPage2.Controls.Add(textBox5);
-            tabPage2.Controls.Add(textBox4);
-            tabPage2.Controls.Add(textBox3);
+            tabPage2.Controls.Add(label12);
+            tabPage2.Controls.Add(label13);
+            tabPage2.Controls.Add(profileEditCount);
+            tabPage2.Controls.Add(warningsCount);
+            tabPage2.Controls.Add(userPasswordBox);
+            tabPage2.Controls.Add(userLoginBox);
+            tabPage2.Controls.Add(userSurnameBox);
+            tabPage2.Controls.Add(userNameBox);
             tabPage2.Controls.Add(button4);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label7);
@@ -198,37 +233,73 @@
             tabPage2.Location = new Point(4, 27);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(957, 419);
+            tabPage2.Size = new Size(972, 437);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Пользователь";
             // 
-            // textBox6
+            // label12
             // 
-            textBox6.Location = new Point(194, 201);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(168, 32);
-            textBox6.TabIndex = 9;
+            label12.AutoSize = true;
+            label12.Location = new Point(706, 18);
+            label12.Name = "label12";
+            label12.Size = new Size(75, 24);
+            label12.TabIndex = 13;
+            label12.Text = "label12";
             // 
-            // textBox5
+            // label13
             // 
-            textBox5.Location = new Point(194, 163);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(168, 32);
-            textBox5.TabIndex = 8;
+            label13.AutoSize = true;
+            label13.Location = new Point(510, 18);
+            label13.Name = "label13";
+            label13.Size = new Size(190, 24);
+            label13.TabIndex = 12;
+            label13.Text = "Добро пожаловать,";
             // 
-            // textBox4
+            // profileEditCount
             // 
-            textBox4.Location = new Point(194, 125);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(168, 32);
-            textBox4.TabIndex = 7;
+            profileEditCount.AutoSize = true;
+            profileEditCount.Location = new Point(510, 163);
+            profileEditCount.Name = "profileEditCount";
+            profileEditCount.Size = new Size(252, 24);
+            profileEditCount.TabIndex = 11;
+            profileEditCount.Text = "Число редакций профиля:";
             // 
-            // textBox3
+            // warningsCount
             // 
-            textBox3.Location = new Point(194, 87);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(168, 32);
-            textBox3.TabIndex = 6;
+            warningsCount.AutoSize = true;
+            warningsCount.Location = new Point(510, 90);
+            warningsCount.Name = "warningsCount";
+            warningsCount.Size = new Size(235, 24);
+            warningsCount.TabIndex = 10;
+            warningsCount.Text = "Число предупреждений:";
+            // 
+            // userPasswordBox
+            // 
+            userPasswordBox.Location = new Point(194, 201);
+            userPasswordBox.Name = "userPasswordBox";
+            userPasswordBox.Size = new Size(168, 32);
+            userPasswordBox.TabIndex = 9;
+            // 
+            // userLoginBox
+            // 
+            userLoginBox.Location = new Point(194, 163);
+            userLoginBox.Name = "userLoginBox";
+            userLoginBox.Size = new Size(168, 32);
+            userLoginBox.TabIndex = 8;
+            // 
+            // userSurnameBox
+            // 
+            userSurnameBox.Location = new Point(194, 125);
+            userSurnameBox.Name = "userSurnameBox";
+            userSurnameBox.Size = new Size(168, 32);
+            userSurnameBox.TabIndex = 7;
+            // 
+            // userNameBox
+            // 
+            userNameBox.Location = new Point(194, 87);
+            userNameBox.Name = "userNameBox";
+            userNameBox.Size = new Size(168, 32);
+            userNameBox.TabIndex = 6;
             // 
             // button4
             // 
@@ -288,60 +359,72 @@
             // tabPage3
             // 
             tabPage3.BackColor = Color.LightCoral;
+            tabPage3.Controls.Add(label17);
+            tabPage3.Controls.Add(label15);
+            tabPage3.Controls.Add(label26);
+            tabPage3.Controls.Add(deleteButton);
+            tabPage3.Controls.Add(addNewAdmin);
             tabPage3.Controls.Add(dataGridView1);
             tabPage3.Controls.Add(textBox7);
-            tabPage3.Controls.Add(comboBox1);
+            tabPage3.Controls.Add(comboBox);
             tabPage3.Controls.Add(label11);
             tabPage3.Controls.Add(label10);
             tabPage3.Controls.Add(label9);
             tabPage3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tabPage3.Location = new Point(4, 27);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(957, 419);
+            tabPage3.Size = new Size(972, 437);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Администрирование";
             // 
-            // label9
+            // label17
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(9, 25);
-            label9.Name = "label9";
-            label9.Size = new Size(413, 24);
-            label9.TabIndex = 0;
-            label9.Text = "Список загеристрированных пользователей";
+            label17.AutoSize = true;
+            label17.Location = new Point(745, 25);
+            label17.Name = "label17";
+            label17.Size = new Size(75, 24);
+            label17.TabIndex = 12;
+            label17.Text = "label14";
             // 
-            // label10
+            // label15
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(9, 81);
-            label10.Name = "label10";
-            label10.Size = new Size(86, 24);
-            label10.TabIndex = 1;
-            label10.Text = "Столбец";
+            label15.AutoSize = true;
+            label15.Location = new Point(549, 25);
+            label15.Name = "label15";
+            label15.Size = new Size(190, 24);
+            label15.TabIndex = 11;
+            label15.Text = "Добро пожаловать,";
             // 
-            // label11
+            // label26
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(373, 81);
-            label11.Name = "label11";
-            label11.Size = new Size(65, 24);
-            label11.TabIndex = 2;
-            label11.Text = "Поиск";
+            label26.AutoSize = true;
+            label26.Location = new Point(561, 395);
+            label26.Name = "label26";
+            label26.Size = new Size(202, 24);
+            label26.TabIndex = 8;
+            label26.Text = "Количество записей:";
             // 
-            // comboBox1
+            // deleteButton
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(110, 78);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(198, 32);
-            comboBox1.TabIndex = 3;
+            deleteButton.BackColor = Color.White;
+            deleteButton.Location = new Point(336, 389);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(111, 37);
+            deleteButton.TabIndex = 7;
+            deleteButton.Text = "Удалить";
+            deleteButton.UseVisualStyleBackColor = false;
+            deleteButton.Click += deleteButton_Click;
             // 
-            // textBox7
+            // addNewAdmin
             // 
-            textBox7.Location = new Point(461, 78);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(198, 32);
-            textBox7.TabIndex = 4;
+            addNewAdmin.BackColor = Color.White;
+            addNewAdmin.Location = new Point(9, 389);
+            addNewAdmin.Name = "addNewAdmin";
+            addNewAdmin.Size = new Size(289, 37);
+            addNewAdmin.TabIndex = 6;
+            addNewAdmin.Text = "Сделать администратором";
+            addNewAdmin.UseVisualStyleBackColor = false;
+            addNewAdmin.Click += addNewAdmin_Click;
             // 
             // dataGridView1
             // 
@@ -406,11 +489,54 @@
             Column7.Name = "Column7";
             Column7.Width = 125;
             // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(461, 78);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(198, 32);
+            textBox7.TabIndex = 4;
+            textBox7.TextChanged += textBox7_TextChanged;
+            // 
+            // comboBox
+            // 
+            comboBox.FormattingEnabled = true;
+            comboBox.Location = new Point(110, 78);
+            comboBox.Name = "comboBox";
+            comboBox.Size = new Size(198, 32);
+            comboBox.TabIndex = 3;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(373, 81);
+            label11.Name = "label11";
+            label11.Size = new Size(65, 24);
+            label11.TabIndex = 2;
+            label11.Text = "Поиск";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(9, 81);
+            label10.Name = "label10";
+            label10.Size = new Size(86, 24);
+            label10.TabIndex = 1;
+            label10.Text = "Столбец";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(9, 25);
+            label9.Name = "label9";
+            label9.Size = new Size(413, 24);
+            label9.TabIndex = 0;
+            label9.Text = "Список загеристрированных пользователей";
+            // 
             // AdministratorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(963, 450);
+            ClientSize = new Size(974, 465);
             Controls.Add(tabControl1);
             Name = "AdministratorForm";
             Text = "AdministratorForm";
@@ -437,13 +563,13 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private Label label3;
-        private Label label2;
+        private Label wordToFilter;
         private Label label1;
         private TabPage tabPage2;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox userPasswordBox;
+        private TextBox userLoginBox;
+        private TextBox userSurnameBox;
+        private TextBox userNameBox;
         private Button button4;
         private Label label8;
         private Label label7;
@@ -451,7 +577,7 @@
         private Label label5;
         private Label label4;
         private TabPage tabPage3;
-        private ComboBox comboBox1;
+        private ComboBox comboBox;
         private Label label11;
         private Label label10;
         private Label label9;
@@ -464,5 +590,16 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private TextBox textBox7;
+        private Label label26;
+        private Button deleteButton;
+        private Button addNewAdmin;
+        private Label profileEditCount;
+        private Label warningsCount;
+        private Label label2;
+        private Label label32;
+        private Label label12;
+        private Label label13;
+        private Label label17;
+        private Label label15;
     }
 }

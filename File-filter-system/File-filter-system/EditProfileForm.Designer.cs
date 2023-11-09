@@ -34,12 +34,12 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            editButton = new Button();
+            editNameBox = new TextBox();
+            editSurnameBox = new TextBox();
+            editLoginBox = new TextBox();
             textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            userPasswordBox = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -102,41 +102,42 @@
             label6.TabIndex = 5;
             label6.Text = "Новый пароль";
             // 
-            // button1
+            // editButton
             // 
-            button1.BackColor = Color.White;
-            button1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.Black;
-            button1.Location = new Point(570, 364);
-            button1.Name = "button1";
-            button1.Size = new Size(172, 34);
-            button1.TabIndex = 6;
-            button1.Text = "Подтвердить";
-            button1.UseVisualStyleBackColor = false;
+            editButton.BackColor = Color.White;
+            editButton.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            editButton.ForeColor = Color.Black;
+            editButton.Location = new Point(570, 364);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(172, 34);
+            editButton.TabIndex = 6;
+            editButton.Text = "Подтвердить";
+            editButton.UseVisualStyleBackColor = false;
+            editButton.Click += editButton_Click;
             // 
-            // textBox1
+            // editNameBox
             // 
-            textBox1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(307, 82);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(177, 32);
-            textBox1.TabIndex = 7;
+            editNameBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            editNameBox.Location = new Point(307, 82);
+            editNameBox.Name = "editNameBox";
+            editNameBox.Size = new Size(177, 32);
+            editNameBox.TabIndex = 7;
             // 
-            // textBox2
+            // editSurnameBox
             // 
-            textBox2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(307, 128);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(177, 32);
-            textBox2.TabIndex = 8;
+            editSurnameBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            editSurnameBox.Location = new Point(307, 128);
+            editSurnameBox.Name = "editSurnameBox";
+            editSurnameBox.Size = new Size(177, 32);
+            editSurnameBox.TabIndex = 8;
             // 
-            // textBox3
+            // editLoginBox
             // 
-            textBox3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(307, 175);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(177, 32);
-            textBox3.TabIndex = 9;
+            editLoginBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            editLoginBox.Location = new Point(307, 175);
+            editLoginBox.Name = "editLoginBox";
+            editLoginBox.Size = new Size(177, 32);
+            editLoginBox.TabIndex = 9;
             // 
             // textBox4
             // 
@@ -146,13 +147,13 @@
             textBox4.Size = new Size(177, 32);
             textBox4.TabIndex = 10;
             // 
-            // textBox5
+            // userPasswordBox
             // 
-            textBox5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(307, 271);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(177, 32);
-            textBox5.TabIndex = 11;
+            userPasswordBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userPasswordBox.Location = new Point(307, 271);
+            userPasswordBox.Name = "userPasswordBox";
+            userPasswordBox.Size = new Size(177, 32);
+            userPasswordBox.TabIndex = 11;
             // 
             // EditProfileForm
             // 
@@ -160,12 +161,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkMagenta;
             ClientSize = new Size(756, 416);
-            Controls.Add(textBox5);
+            Controls.Add(userPasswordBox);
             Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(editLoginBox);
+            Controls.Add(editSurnameBox);
+            Controls.Add(editNameBox);
+            Controls.Add(editButton);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -186,11 +187,11 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private Button editButton;
+        private TextBox editNameBox;
+        private TextBox editSurnameBox;
+        private TextBox editLoginBox;
         private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox userPasswordBox;
     }
 }

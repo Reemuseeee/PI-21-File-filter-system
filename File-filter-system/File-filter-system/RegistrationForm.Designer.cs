@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            button1 = new Button();
+            userNameBox = new TextBox();
+            userSurnameBox = new TextBox();
+            userLoginBox = new TextBox();
+            userPasswordBox = new TextBox();
+            userRPasswordBox = new TextBox();
+            completeReg = new Button();
             label2 = new Label();
             SuspendLayout();
             // 
@@ -48,61 +48,72 @@
             label1.TabIndex = 0;
             label1.Text = "Регистрация";
             // 
-            // textBox1
+            // userNameBox
             // 
-            textBox1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(229, 90);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(238, 32);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Имя:";
+            userNameBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userNameBox.Location = new Point(229, 90);
+            userNameBox.Name = "userNameBox";
+            userNameBox.Size = new Size(238, 32);
+            userNameBox.TabIndex = 1;
+            userNameBox.Text = "Имя:";
+            userNameBox.Enter += userNameBox_Enter;
+            userNameBox.Leave += userNameBox_Leave;
             // 
-            // textBox2
+            // userSurnameBox
             // 
-            textBox2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(229, 139);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(238, 32);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "Фамилия:";
+            userSurnameBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userSurnameBox.Location = new Point(229, 139);
+            userSurnameBox.Name = "userSurnameBox";
+            userSurnameBox.Size = new Size(238, 32);
+            userSurnameBox.TabIndex = 2;
+            userSurnameBox.Text = "Фамилия:";
+            userSurnameBox.Enter += userSurnameBox_Enter;
+            userSurnameBox.Leave += userSurnameBox_Leave;
             // 
-            // textBox3
+            // userLoginBox
             // 
-            textBox3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(229, 188);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(238, 32);
-            textBox3.TabIndex = 3;
-            textBox3.Text = "Логин:";
+            userLoginBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userLoginBox.Location = new Point(229, 188);
+            userLoginBox.Name = "userLoginBox";
+            userLoginBox.Size = new Size(238, 32);
+            userLoginBox.TabIndex = 3;
+            userLoginBox.Text = "Логин:";
+            userLoginBox.Enter += userLoginBox_Enter;
+            userLoginBox.Leave += userLoginBox_Leave;
             // 
-            // textBox4
+            // userPasswordBox
             // 
-            textBox4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(229, 238);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(238, 32);
-            textBox4.TabIndex = 4;
-            textBox4.Text = "Пароль:";
+            userPasswordBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userPasswordBox.Location = new Point(229, 238);
+            userPasswordBox.Name = "userPasswordBox";
+            userPasswordBox.Size = new Size(238, 32);
+            userPasswordBox.TabIndex = 4;
+            userPasswordBox.Text = "Пароль:";
+            userPasswordBox.Enter += userPasswordBox_Enter;
+            userPasswordBox.Leave += userPasswordBox_Leave;
             // 
-            // textBox5
+            // userRPasswordBox
             // 
-            textBox5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(229, 287);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(238, 32);
-            textBox5.TabIndex = 5;
-            textBox5.Text = "Пароль повторно:";
+            userRPasswordBox.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userRPasswordBox.Location = new Point(229, 287);
+            userRPasswordBox.Name = "userRPasswordBox";
+            userRPasswordBox.Size = new Size(238, 32);
+            userRPasswordBox.TabIndex = 5;
+            userRPasswordBox.Text = "Пароль повторно:";
+            userRPasswordBox.Enter += userRPassworBox_Enter;
+            userRPasswordBox.Leave += userRPassworBox_Leave;
             // 
-            // button1
+            // completeReg
             // 
-            button1.BackColor = Color.White;
-            button1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(118, 325);
-            button1.Name = "button1";
-            button1.Size = new Size(472, 39);
-            button1.TabIndex = 6;
-            button1.Text = "Зарегистрироваться и вернуться к авторизации";
-            button1.UseVisualStyleBackColor = false;
+            completeReg.BackColor = Color.White;
+            completeReg.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            completeReg.Location = new Point(118, 325);
+            completeReg.Name = "completeReg";
+            completeReg.Size = new Size(472, 39);
+            completeReg.TabIndex = 6;
+            completeReg.Text = "Зарегистрироваться и вернуться к авторизации";
+            completeReg.UseVisualStyleBackColor = false;
+            completeReg.Click += completeReg_Click;
             // 
             // label2
             // 
@@ -121,15 +132,16 @@
             BackColor = Color.LightCoral;
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
-            Controls.Add(button1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(completeReg);
+            Controls.Add(userRPasswordBox);
+            Controls.Add(userPasswordBox);
+            Controls.Add(userLoginBox);
+            Controls.Add(userSurnameBox);
+            Controls.Add(userNameBox);
             Controls.Add(label1);
             Name = "RegistrationForm";
             Text = "RegistrationForm";
+            Load += RegistrationForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,12 +149,12 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private Button button1;
+        private TextBox userNameBox;
+        private TextBox userSurnameBox;
+        private TextBox userLoginBox;
+        private TextBox userPasswordBox;
+        private TextBox userRPasswordBox;
+        private Button completeReg;
         private Label label2;
     }
 }

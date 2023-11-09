@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            label2 = new Label();
+            userLogin = new TextBox();
+            userPassword = new TextBox();
+            authorizeButton = new Button();
+            goToRegForm = new Label();
             SuspendLayout();
             // 
             // label1
@@ -45,44 +45,46 @@
             label1.TabIndex = 0;
             label1.Text = "Авторизация";
             // 
-            // textBox1
+            // userLogin
             // 
-            textBox1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(222, 178);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(273, 32);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Логин :";
+            userLogin.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userLogin.Location = new Point(222, 178);
+            userLogin.Name = "userLogin";
+            userLogin.Size = new Size(273, 32);
+            userLogin.TabIndex = 1;
+            userLogin.Text = "Логин :";
             // 
-            // textBox2
+            // userPassword
             // 
-            textBox2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(222, 235);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(273, 32);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "Пароль :";
+            userPassword.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userPassword.Location = new Point(222, 235);
+            userPassword.Name = "userPassword";
+            userPassword.Size = new Size(273, 32);
+            userPassword.TabIndex = 2;
+            userPassword.Text = "Пароль :";
             // 
-            // button1
+            // authorizeButton
             // 
-            button1.BackColor = Color.White;
-            button1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(299, 288);
-            button1.Name = "button1";
-            button1.Size = new Size(111, 35);
-            button1.TabIndex = 3;
-            button1.Text = "Вход";
-            button1.UseVisualStyleBackColor = false;
+            authorizeButton.BackColor = Color.White;
+            authorizeButton.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            authorizeButton.Location = new Point(299, 288);
+            authorizeButton.Name = "authorizeButton";
+            authorizeButton.Size = new Size(111, 35);
+            authorizeButton.TabIndex = 3;
+            authorizeButton.Text = "Вход";
+            authorizeButton.UseVisualStyleBackColor = false;
+            authorizeButton.Click += authorizeButton_Click;
             // 
-            // label2
+            // goToRegForm
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(151, 326);
-            label2.Name = "label2";
-            label2.Size = new Size(410, 24);
-            label2.TabIndex = 4;
-            label2.Text = "Не зарегистрированы? Зарегистрироваться";
+            goToRegForm.AutoSize = true;
+            goToRegForm.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            goToRegForm.Location = new Point(151, 326);
+            goToRegForm.Name = "goToRegForm";
+            goToRegForm.Size = new Size(410, 24);
+            goToRegForm.TabIndex = 4;
+            goToRegForm.Text = "Не зарегистрированы? Зарегистрироваться";
+            goToRegForm.Click += goToRegForm_Click;
             // 
             // AuthorizeForm
             // 
@@ -90,13 +92,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightCoral;
             ClientSize = new Size(800, 450);
-            Controls.Add(label2);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(goToRegForm);
+            Controls.Add(authorizeButton);
+            Controls.Add(userPassword);
+            Controls.Add(userLogin);
             Controls.Add(label1);
             Name = "AuthorizeForm";
             Text = "AuthorizeForm";
+            Load += AuthorizeForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -104,9 +107,9 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
-        private Label label2;
+        private TextBox userLogin;
+        private TextBox userPassword;
+        private Button authorizeButton;
+        private Label goToRegForm;
     }
 }
